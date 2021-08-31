@@ -7,6 +7,12 @@ GIT
       bundler
       ruboty
 
+PATH
+  remote: ruboty-study
+  specs:
+    ruboty-study (0.1.0)
+      ruboty (~> 1.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -67,6 +73,7 @@ PLATFORMS
 DEPENDENCIES
   ruboty-gen!
   ruboty-slack_rtm
+  ruboty-study!
 
 BUNDLED WITH
    2.1.4
