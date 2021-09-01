@@ -21,5 +21,15 @@ describe Ruboty::Handlers::Study do
       # テスト実行
       robot.receive(body: 'ruboty hello', from: 'sender', to: 'channel')
     end
+
+    it '"こんがんは"に反応しない' do
+      # テスト検証: Action.newをmock化して、呼ばれないことを検証
+      Ruboty::Study::Actions::Hello
+      .expects(:new)
+      .never
+
+      # テスト実行
+      robot.receive(body: 'ruboty こんばんは', from: 'sender', to: 'channel')
+    end
   end
 end
