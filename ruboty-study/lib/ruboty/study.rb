@@ -1,4 +1,4 @@
-
+require 'ruboty'
 module Ruboty
   module Study
     # Your code goes here...
