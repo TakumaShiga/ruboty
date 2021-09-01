@@ -33,8 +33,16 @@ describe Ruboty::Study::Actions::Hello do
 
   describe '#call()' do
     it 'message[:hello]が"こんにちは"の場合、"世界!"を返信する' do
-      #テスト準備:スタブでmessageに[:hello]を設定
+      # テスト準備:スタブでmessageに[:hello]を設定
       mock_message.stubs(:[]).with(:hello).returns('こんにちは')
+
+      # スタブの動作確認
+      expect(mock_message[:hello].must_equal 'こんにちは')
+
+      # テスト検証：モックでreplyの引数を検証
+      mock_message.expects(:reply).with('世界!').returns.once
+
+      subject.call
     end
   end
 end
